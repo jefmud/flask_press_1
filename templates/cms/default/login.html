@@ -1,0 +1,10 @@
+{% extends 'cms/default/layout.html' %}
+{% from 'cms/default/macros.html' import field %}
+{% block content %}
+<h1 class="title">{{ g.brand }} Login</h1>
+<form method="post">
+{{ field('username', 'Username', value=form.username.data, category=error, licon="fa-user", help=help) }}
+{{ field('password', 'Password', is_password=True, category=error, help=help) }}
+<input type="submit" class="button is-primary">
+</form>
+{% endblock %}

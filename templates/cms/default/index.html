@@ -1,0 +1,18 @@
+{% extends 'cms/default/layout.html' %}
+{% from 'cms/default/navbar.html' import render_navbar %}
+{% block title %}{{ g.branding }}{% endblock %}
+{% block content %}
+{{ render_navbar() }}
+<div class="content">
+    <h1 class="title">Welcome to {{ g.brand }} </h1>
+    <p>
+    FlaskPress is an open-source micro-CMS (content management system).  It is our hope it will be useful to
+    community members that have learned or are discovering the excellence of Python and the Flask web framework.
+    </p>
+    <p>
+    FlaskPress leverages several Flask plugins and the simple and expressive PeeWee ORM by Charles Leifer.
+    In addition, we use the Bulma CSS framework and Bootstrap under the hood.
+    We look forward to community involvement to add more to the project.
+    </p>
+</div>
+{% endblock %}

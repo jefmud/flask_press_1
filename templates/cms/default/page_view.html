@@ -1,0 +1,18 @@
+{% extends 'cms/default/layout.html' %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+<div class="content">
+<h1 class="title">{{ page.title }}</h1>
+{% if page.parent %}
+<div>
+<a href="{{ url_for('page_view', page_id=page.parent.id) }}">{{ page.parent }}</a>
+</div>
+{% endif %}
+{% if page.owner==session['user_id'] or session['is_admin'] %}
+<a href="{{ url_for('page_edit', page_id=page.id)}}">Edit</a>
+{% endif %}
+<div>
+    {{ page.content|safe }}
+</div>
+</div>
+{% endblock %}
